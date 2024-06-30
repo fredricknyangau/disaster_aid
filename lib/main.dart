@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'home.dart';
+import 'admin_login_page.dart';
 import 'query_post_page.dart';
 
 void main() async {
@@ -40,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> _children = [
     const HomeScreen(),
     const AlertScreen(),
-    QueryPostPage(),  
+    QueryPostPage(),
   ];
 
   void onTabTapped(int index) {
@@ -52,6 +53,20 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Disaster Management App'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.admin_panel_settings),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AdminLoginPage()),
+              );
+            },
+          ),
+        ],
+      ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
@@ -67,8 +82,8 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Alert',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.edit),  // Updated icon
-            label: 'Post Query',  // Updated label
+            icon: Icon(Icons.edit),
+            label: 'Post Query',
           ),
         ],
       ),
