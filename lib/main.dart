@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'homescreen.dart';
-import 'alertscreen_page.dart';
-import 'communityscreen_page.dart';
+import 'home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -72,6 +70,32 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Community',
           ),
         ],
+      ),
+    );
+  }
+}
+
+class AlertScreen extends StatelessWidget {
+  const AlertScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(
+        child: Text('This is the Alert screen'),
+      ),
+    );
+  }
+}
+
+class CommunityScreen extends StatelessWidget {
+  const CommunityScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(
+        child: Text('This is the Community screen'),
       ),
     );
   }
