@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'home.dart';
-
+import 'query_post_page.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options:DefaultFirebaseOptions.currentPlatform,
+    options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const MyApp());
 }
@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> _children = [
     const HomeScreen(),
     const AlertScreen(),
-    const CommunityScreen(),
+    QueryPostPage(),  
   ];
 
   void onTabTapped(int index) {
@@ -66,8 +66,8 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Alert',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.group),
-            label: 'Community',
+            icon: Icon(Icons.edit),  // Updated icon
+            label: 'Post Query',  // Updated label
           ),
         ],
       ),
@@ -83,19 +83,6 @@ class AlertScreen extends StatelessWidget {
     return const Scaffold(
       body: Center(
         child: Text('This is the Alert screen'),
-      ),
-    );
-  }
-}
-
-class CommunityScreen extends StatelessWidget {
-  const CommunityScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('This is the Community screen'),
       ),
     );
   }
