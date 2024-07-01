@@ -8,13 +8,7 @@ class AdminDashboard extends StatelessWidget {
         title: Text('Admin Dashboard'),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Welcome to the Admin Dashboard!'),
-            // Add more admin functionalities here
-          ],
-        ),
+        child: Text('Welcome to the Admin Dashboard'),
       ),
     );
   }
