@@ -45,8 +45,8 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> _children = [
     const HomeScreen(),
     const AlertScreen(),
-    QueryPostPage(),
-    QueryListPage(),
+    const QueryPostPage(),
+    const QueryListPage(),
   ];
 
   void onTabTapped(int index) {
@@ -59,14 +59,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Disaster Management App'),
+        title: const Text('Disaster Management App'),
         actions: [
           IconButton(
-            icon: Icon(Icons.admin_panel_settings),
+            icon: const Icon(Icons.admin_panel_settings),
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AdminLoginPage()),
+                MaterialPageRoute(builder: (context) => const AdminLoginPage()),
               );
             },
           ),

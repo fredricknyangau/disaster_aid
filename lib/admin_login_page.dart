@@ -4,6 +4,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'admin_dashboard.dart';
 
 class AdminLoginPage extends StatefulWidget {
+  const AdminLoginPage({super.key});
+
   @override
   _AdminLoginPageState createState() => _AdminLoginPageState();
 }
@@ -26,12 +28,12 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
         if (isAdmin) {
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => AdminDashboard()),
+            MaterialPageRoute(builder: (context) => const AdminDashboard()),
           );
         } else {
           // Show error message if the user is not an admin
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('You are not authorized to access this page')),
+            const SnackBar(content: Text('You are not authorized to access this page')),
           );
         }
       }
@@ -54,24 +56,24 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Admin Login')),
+      appBar: AppBar(title: const Text('Admin Login')),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             TextField(
               controller: _emailController,
-              decoration: InputDecoration(labelText: 'Email'),
+              decoration: const InputDecoration(labelText: 'Email'),
             ),
             TextField(
               controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
+              decoration: const InputDecoration(labelText: 'Password'),
               obscureText: true,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _login,
-              child: Text('Login'),
+              child: const Text('Login'),
             ),
           ],
         ),

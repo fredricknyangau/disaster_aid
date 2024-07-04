@@ -2,6 +2,8 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class QueryListPage extends StatefulWidget {
+  const QueryListPage({super.key});
+
   @override
   _QueryListPageState createState() => _QueryListPageState();
 }
@@ -19,7 +21,7 @@ class _QueryListPageState extends State<QueryListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Queries')),
+      appBar: AppBar(title: const Text('Queries')),
       body: StreamBuilder<DatabaseEvent>(
         stream: _queryStream,
         builder: (context, snapshot) {
@@ -44,12 +46,12 @@ class _QueryListPageState extends State<QueryListPage> {
                 },
               );
             } else {
-              return Center(child: Text('No queries found.'));
+              return const Center(child: Text('No queries found.'));
             }
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
         },
       ),

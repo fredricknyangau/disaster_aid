@@ -80,7 +80,7 @@ class HomeScreen extends StatelessWidget {
                         title: const Text('View Queries'),
                         onTap: () {
                           Navigator.pop(context);
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => QueryListPage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const QueryListPage()));
                         },
                       ),
 

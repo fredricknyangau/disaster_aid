@@ -3,6 +3,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class QueryPostPage extends StatefulWidget {
+  const QueryPostPage({super.key});
+
   @override
   _QueryPostPageState createState() => _QueryPostPageState();
 }
@@ -21,12 +23,12 @@ class _QueryPostPageState extends State<QueryPostPage> {
           'timestamp': FieldValue.serverTimestamp(),
         });
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Query posted successfully!')),
+          const SnackBar(content: Text('Query posted successfully!')),
         );
         _queryController.clear();
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('User not logged in')),
+          const SnackBar(content: Text('User not logged in')),
         );
       }
     } catch (e) {
@@ -41,23 +43,23 @@ class _QueryPostPageState extends State<QueryPostPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Post a Query'),
+        title: const Text('Post a Query'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             TextField(
               controller: _queryController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Enter your query',
               ),
               maxLines: 5,
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: _postQuery,
-              child: Text('Post Query'),
+              child: const Text('Post Query'),
             ),
           ],
         ),

@@ -6,6 +6,8 @@ class ProfilePage extends StatelessWidget {
   final _nameController = TextEditingController();
   final _locationController = TextEditingController();
 
+  ProfilePage({super.key});
+
   void _updateProfile() {
     FirebaseAuth auth = FirebaseAuth.instance;
     User? user = auth.currentUser;
@@ -20,24 +22,24 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: const Text('Profile'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             TextField(
               controller: _nameController,
-              decoration: InputDecoration(labelText: 'Name'),
+              decoration: const InputDecoration(labelText: 'Name'),
             ),
             TextField(
               controller: _locationController,
-              decoration: InputDecoration(labelText: 'Location'),
+              decoration: const InputDecoration(labelText: 'Location'),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: _updateProfile,
-              child: Text('Update Profile'),
+              child: const Text('Update Profile'),
             ),
           ],
         ),
