@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:firebase_database/firebase_database.dart';
 import 'firebase_options.dart';
 import 'home.dart';
 import 'admin_login_page.dart';
 import 'query_post_page.dart';
+import 'query_list_page.dart';  // Add this line
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,6 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const HomeScreen(),
     const AlertScreen(),
     QueryPostPage(),
+    QueryListPage(),
   ];
 
   void onTabTapped(int index) {

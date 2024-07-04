@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'login_page.dart';
 import 'signup_page.dart';
+import 'query_list_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -73,6 +74,16 @@ class HomeScreen extends StatelessWidget {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => const SignupPage()));
                         },
                       ),
+                      
+                      ListTile(
+                        leading: const Icon(Icons.question_answer),
+                        title: const Text('View Queries'),
+                        onTap: () {
+                          Navigator.pop(context);
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => QueryListPage()));
+                        },
+                      ),
+
                     ],
                   );
                 },
